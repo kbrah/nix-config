@@ -28,6 +28,7 @@
 
   # Enable networking
   networking.networkmanager.enable = true;
+   programs.nm-applet.enable = true;
 
   # Set your time zone.
   time.timeZone = "Europe/Helsinki";
@@ -52,16 +53,12 @@
 
   # Enable the XFCE Desktop Environment.
   services.xserver.desktopManager = {
-    xfce = {
-      enable = true;	
-      noDesktop = true;
-      enableXfwm = false;
-    };
+ 	xterm.enable = true;
   };
 
   services.xserver.displayManager = {
     lightdm.enable = true; 
-    defaultSession = "xfce+i3";
+    defaultSession = "none+i3";
   };
 
   services.xserver.windowManager.i3 = {
@@ -127,6 +124,7 @@
     spice-vdagent
     git
     stow
+    arandr
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
