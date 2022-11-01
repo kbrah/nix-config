@@ -13,6 +13,7 @@
 
 
   services.spice-vdagentd.enable = true;
+  services.qemuGuest.enable = true;
 
   # Bootloader.
   boot.loader.grub.enable = true;
@@ -106,6 +107,7 @@
     isNormalUser = true;
     description = "lasse";
     extraGroups = [ "networkmanager" "wheel" ];
+    shell = pkgs.zsh;
     packages = with pkgs; [
       firefox
     #  thunderbird
@@ -121,6 +123,7 @@
     wget
     neovim
     kitty
+    alacritty
     spice-vdagent
     git
     stow
